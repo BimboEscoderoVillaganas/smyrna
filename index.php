@@ -1,0 +1,348 @@
+<!--
+  | Website designed by JstnLT (https://jstnlt.my.id)
+  | This project is open source: https://github.com/JastinXyz/discord-bot-landing-page-web
+-->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SMYRNA</title>
+    <link rel="stylesheet" href="assets/css/bulma.min.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+    <link rel="stylesheet" href="https://unpkg.com/tippy.js@6/animations/scale.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <script src="assets/js/jquery-3.6.0.js"></script>
+  </head>
+  <body>
+    <!-- Back To Top Start -->
+    <a id="backtotop" data-tippy-content="Back To Top.">
+      <i class="fa-solid fa-angle-up has-text-white fa-2xl mt-5"></i>
+    </a>
+    <!-- Back To Top End -->
+
+    <!-- Navbar Start -->
+    <nav
+      class="navbar is-fixed-top"
+      role="navigation"
+      aria-label="main navigation"
+    >
+      <div class="navbar-brand mt-2 mb-2">
+        <a class="navbar-item" href="#">
+          <strong>SMYRNA TECHNOLOGY AND TRADE OPC</strong>
+
+          <!-- or if you want to use image -->
+          <!-- <img
+            src="image link or path"
+            width="112"
+            height="28"
+          /> -->
+        </a>
+
+        <a
+          role="button"
+          class="navbar-burger has-text-white"
+          data-target="navMenu"
+          aria-label="menu"
+          aria-expanded="false"
+        >
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+
+      <div id="navbarBasicExample" class="navbar-menu">
+        <div class="navbar-start">
+          <a href="#" class="navbar-item is-tab">
+            Home
+          </a>
+
+          <a href="#features" class="navbar-item is-tab">
+            Services
+          </a>
+
+          <a href="#stats" class="navbar-item is-tab">
+            Stats
+          </a>
+
+          <a href="#" class="navbar-item is-tab">
+            Docs
+          </a>
+        </div>
+
+        <div class="navbar-end">
+          <!--<a href="#" class="navbar-item is-tab" target="_blank">
+            <i class="fa-brands fa-discord"></i>
+          </a>
+
+          <a href="#" class="navbar-item is-tab" target="_blank">
+            <i class="fa-brands fa-github"></i>
+          </a>-->
+
+          <div class="navbar-item">
+            <div class="buttons">
+              <a href="login.php" class="button is-blurple">
+                <strong
+                  ><i class="fa-solid fa-right-to-bracket mr-2"></i>
+                  Login</strong
+                >
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <!-- Navbar End -->
+
+    <!-- Hero Section Start -->
+    <section class="hero bg-base is-fullheight">
+      <div class="hero-body">
+        <div class="">
+          <div class="columns">
+            <div class="column mr-6 mt-12" data-aos="fade-up">
+              <p class="title has-text-white has-text-weight-bold">
+                SMYRNA TECHNOLOGY AND TRADE OPC
+              </p>
+              <p class="subtitle has-text-grey-light is-size-6 mt-3">
+                At SMYRNA Technology and Trade OPC, we are dedicated to advancing agriculture through drone technology and reliable equipment services. As a trusted supplier of DJI Agras drones — including the T25, T50, and T100 — we help farmers and agribusinesses adopt modern solutions that improve productivity and sustainability. Our services extend beyond sales. We specialize in precision spraying for crops such as pineapple, banana, tomato, rice, and sugarcane. We also provide maintenance and repair for DJI Agras drones and generators, ensuring equipment stays in top condition. To support our clients further, we offer training programs that equip users with the skills to operate and maintain their equipment effectively. SMYRNA Technology and Trade OPC is more than a supplier — we are your partner in smart farming solutions.
+              </p>
+              <!--<div class="buttons">
+                <a href="#" class="button is-info">
+                  <strong>Add To Discord</strong>
+                </a>
+
+                <a href="#" class="button is-primary is-outlined">
+                  <strong><i class="fa-solid fa-crown"></i> Premium</strong>
+                </a>
+              </div>-->
+            </div>
+            <div class="column mt-6" data-aos="fade-left">
+              <img
+                class="image has-image-centered vert-move mt-4"
+                src="assets/img/Agras T50.png"
+                alt="hero image"
+                style="width: 20rem;"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="has-text-centered" data-tippy-content="Scroll Down">
+        <a href="#features"
+          ><i
+            class="fa-solid fa-circle-chevron-down fa-lg vert-move2 has-text-white"
+          ></i
+        ></a>
+      </div>
+    </section>
+    <!-- Hero Section End -->
+
+    <!-- Hero Waves Start -->
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+      <path
+        fill="#1a2634"
+        fill-opacity="1"
+        d="M0,288L24,261.3C48,235,96,181,144,154.7C192,128,240,128,288,149.3C336,171,384,213,432,202.7C480,192,528,128,576,133.3C624,139,672,213,720,213.3C768,213,816,139,864,101.3C912,64,960,64,1008,106.7C1056,149,1104,235,1152,240C1200,245,1248,171,1296,144C1344,117,1392,139,1416,149.3L1440,160L1440,0L1416,0C1392,0,1344,0,1296,0C1248,0,1200,0,1152,0C1104,0,1056,0,1008,0C960,0,912,0,864,0C816,0,768,0,720,0C672,0,624,0,576,0C528,0,480,0,432,0C384,0,336,0,288,0C240,0,192,0,144,0C96,0,48,0,24,0L0,0Z"
+      ></path>
+    </svg>
+    <!-- Hero Waves End -->
+
+    <!-- Service Section Start -->
+    <section id="features" class="section mt-6">
+      <div class="has-text-centered">
+        <h1 class="title lined">Services</h1>
+        <div class="line line-center blurple"></div>
+      </div>
+
+      <!-- single Service start (Left) -->
+      <div class="single-feature">
+        <div class="columns mt-6">
+          <div class="column mr-6">
+            <h4 class="title"> <span class="blurple">#1 </span>Drone Sales & Solutions</h4>
+            <p class="subtitle mt-3">
+              At SMYRNA Technology and Trade OPC, we bring innovation and efficiency to modern agriculture through advanced drone technology and reliable equipment services. As an authorized dealer of DJI Agras drones including the T25, T50, and T100, we provide cutting-edge solutions that help farmers and agribusinesses maximize productivity while reducing time and costs.
+            </p>
+          </div>
+          <div class="column" data-aos="fade-left">
+            <img
+              class="image has-image-centered"
+              src="assets/img/features1.svg"
+              alt="feature1 img"
+              style="width: 23rem;"
+            />
+          </div>
+        </div>
+      </div>
+      <!-- single feature end (Left) -->
+
+      <!-- single feature start (Right) -->
+        <div class="single-feature">
+    <div class="columns mt-6">
+      <div class="column" data-aos="fade-right">
+        <img
+          class="image has-image-centered"
+          src="assets/img/features2.svg"
+          alt="feature1 img"
+          style="width: 23rem;"
+        />
+      </div>
+      <div class="column">
+        <h4 class="title">
+           <span class="has-text-primary">#2 </span> Spraying & Equipment Maintenance
+        </h4>
+        <p class="subtitle mt-3">
+          Beyond sales, we specialize in precision spraying services for crops such as pineapple, banana, tomato, rice, sugarcane, and more, ensuring accurate application for healthier and higher yields. Our team also offers professional maintenance and repair of DJI Agras drones, generators, and other essential equipment, helping you keep your operations running smoothly.
+        </p>
+      </div>
+    </div>
+  </div>
+  <!-- single feature end (Right) -->
+
+  <!-- single feature start (Left) -->
+  <div class="single-feature">
+    <div class="columns mt-6">
+      <div class="column mr-6">
+        <h4 class="title">
+          <span class="has-text-warning">#3 </span>Training Programs
+        </h4>
+        <p class="subtitle mt-3">
+          To empower users, we provide comprehensive training programs designed to equip farmers, operators, and businesses with the knowledge and skills to effectively use and maintain their drones and equipment.
+        </p>
+      </div>
+      <div class="column" data-aos="fade-left">
+        <img
+          class="image has-image-centered"
+          src="assets/img/features3.svg"
+          alt="feature1 img"
+          style="width: 23rem;"
+        />
+      </div>
+    </div>
+  </div>
+  <!-- single Service end (Left) -->
+
+  <!-- single Service start (Right) -->
+  <div class="single-feature">
+    <div class="columns mt-6">
+      <div class="column" data-aos="fade-right">
+        <img
+          class="image has-image-centered"
+          src="assets/img/features4.svg"
+          alt="feature1 img"
+          style="width: 23rem;"
+        />
+      </div>
+      <div class="column">
+        <h4 class="title"> <span class="has-text-info">#4 </span>Industry Support</h4>
+        <p class="subtitle mt-3">
+          At SMYRNA Technology and Trade OPC, we are committed to supporting the agricultural industry with technology-driven solutions, trusted services, and expert guidance.
+        </p>
+      </div>
+    </div>
+  </div>
+  <!-- single Service end (Right) -->
+    </section>
+    <!-- Service Section End -->
+
+    <!-- Stats Section Start -->
+    <section id="stats" class="section mt-6">
+      <div class="has-text-centered">
+        <h1 class="title lined">Stats</h1>
+        <div class="line line-center blurple"></div>
+      </div>
+
+      <div class="columns mt-6">
+        <div class="column has-text-centered">
+          <p class="title has-text-weight-bold lined">000</p>
+          <span class="subtitle has-text-weight-bold blurple"><i class="fa-solid fa-server"></i> Servers</span>
+        </div>
+
+        <div class="column has-text-centered">
+          <p class="title has-text-weight-bold lined">000</p>
+          <span class="subtitle has-text-weight-bold blurple"><i class="fa-solid fa-terminal"></i> Commands</span>
+        </div>
+
+        <div class="column has-text-centered">
+          <p class="title has-text-weight-bold lined">000</p>
+          <span class="subtitle has-text-weight-bold blurple"><i class="fa-solid fa-users"></i> Users</span>
+        </div>
+      </div>
+    </section>
+    <!-- Stats Section End -->
+
+    <!-- Invite Section Start -->
+<section class="section mt-6">
+  <div class="columns">
+    <div class="column has-text-left">
+      <p class="title has-text-weight-bold">
+        Ready to transform your farming with <span class="blurple">SMYRNA</span>?
+      </p>
+      <p class="subtitle mt-3 has-text-gray">
+        Experience the power of DJI Agras drones and precision spraying services designed
+        to save time, cut costs, and boost your crop yields. From drone sales and maintenance
+        to training and field operations, we’ve got everything you need to take your farm
+        to the next level.
+      </p>
+      <a href="#" class="button is-blurple is-medium">
+        <strong><i class="fa-solid fa-book"></i> Get Started Today</strong>
+      </a>
+    </div>
+
+    <div class="column"></div>
+  </div>
+</section>
+<!-- Invite Section End -->
+
+
+    <!-- Footer Section Start -->
+    <footer class="footer bg-base">
+      <div class="content has-text-centered has-text-white">
+        <div class="mb-2">
+          &nbsp; &nbsp;
+          <a href="https://web.facebook.com/profile.php?id=61568381996275" class="has-text-white" target="_blank">
+            <i class="fa-brands fa-facebook"></i>
+          </a>
+        </div>
+
+        <p>
+          <span class="has-text-weight-bold">Smyrna Technology and Trade OPC</span>
+          <br />
+          &copy; <span id="cp-year"></span> Copyright Smyrna Technology and Trade OPC. All Rights
+          Reserved.
+        </p>
+
+        <p style="letter-spacing: 0.1em;" class="is-uppercase">
+          Website Designed By
+          <a
+            href="https://bimboescoderovillaganas.github.io/Bimbo/"
+            class="blurple has-text-weight-bold"
+            target="_blank"
+            >Bimbo Villaganas</a
+          >.<br>visit my github account to see my development projects <a
+            href="https://github.com/BimboEscoderoVillaganas"
+            class="blurple has-text-weight-bold"
+            target="_blank"
+            >Github</a
+          >
+        </p>
+      </div>
+    </footer>
+    <!-- Footer Section End -->
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://unpkg.com/@popperjs/core@2"></script>
+    <script src="https://unpkg.com/tippy.js@6"></script>
+    <script src="assets/js/script.js"></script>
+  </body>
+</html>
