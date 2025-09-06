@@ -1,3 +1,81 @@
+<?php
+// Start session
+session_start();
+
+// Include database configuration
+require_once 'db/db_connection.php';
+
+// Initialize variables
+$email = '';
+$error_message = '';
+
+// Process form data when form is submitted
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    // Get and sanitize input data
+    $email = trim($_POST['email'] ?? '');
+    $password = $_POST['password'] ?? '';
+    $remember = isset($_POST['remember']) ? true : false;
+    
+    // Validate input
+    if (empty($email) || empty($password)) {
+        $error_message = 'Please enter both email and password';
+    } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        $error_message = 'Invalid email format';
+    } else {
+        try {
+            // Get database connection
+            $pdo = getDBConnection();
+            
+            // Check if user exists
+            $stmt = $pdo->prepare("SELECT * FROM user_table WHERE email = ?");
+            $stmt->execute([$email]);
+            
+            if ($stmt->rowCount() === 1) {
+                $user = $stmt->fetch();
+                
+                // Verify password
+                if (password_verify($password, $user['password'])) {
+                    // Check account status
+                    if ($user['status'] === 'inactive') {
+                        // Redirect to queue page for inactive accounts
+                        header('Location: account_queue.php');
+                        exit();
+                    } elseif ($user['status'] === 'active') {
+                        // Set session variables
+                        $_SESSION['user_id'] = $user['id'];
+                        $_SESSION['user_email'] = $user['email'];
+                        $_SESSION['user_name'] = $user['name'];
+                        $_SESSION['user_type'] = $user['user_type'];
+                        $_SESSION['user_status'] = $user['status'];
+                        
+                        // Redirect based on user type
+                        if ($user['user_type'] === 'admin') {
+                            header('Location: pages/admin/dashboard.php');
+                            exit();
+                        } elseif ($user['user_type'] === 'client') {
+                            header('Location: pages/client/dashboard.php');
+                            exit();
+                        } else {
+                            // Default to user dashboard
+                            header('Location: pages/user/dashboard.php');
+                            exit();
+                        }
+                    }
+                } else {
+                    // Invalid password
+                    $error_message = 'Invalid email or password';
+                }
+            } else {
+                // User not found
+                $error_message = 'Invalid email or password';
+            }
+        } catch(PDOException $e) {
+            error_log("Database error: " . $e->getMessage());
+            $error_message = 'Login failed. Please try again later.';
+        }
+    }
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,10 +98,17 @@
 					<div class="card fat">
 						<div class="card-body">
 							<h4 class="card-title">Login</h4>
+							
+							<?php if (!empty($error_message)): ?>
+								<div class="alert alert-danger" role="alert">
+									<?php echo htmlspecialchars($error_message); ?>
+								</div>
+							<?php endif; ?>
+							
 							<form method="POST" class="my-login-validation" novalidate="">
 								<div class="form-group">
 									<label for="email">E-Mail Address</label>
-									<input id="email" type="email" class="form-control" name="email" value="" required autofocus>
+									<input id="email" type="email" class="form-control" name="email" value="<?php echo htmlspecialchars($email); ?>" required autofocus>
 									<div class="invalid-feedback">
 										Email is invalid
 									</div>

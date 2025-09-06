@@ -2,14 +2,7 @@
 // Start session
 session_start();
 
-// Check if user was redirected from registration
-if (!isset($_SESSION['success_message'])) {
-    header('Location: index.php');
-    exit();
-}
-
-$success_message = $_SESSION['success_message'];
-unset($_SESSION['success_message']);
+// Simple page to inform users their account is pending approval
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -33,18 +26,15 @@ unset($_SESSION['success_message']);
                         <div class="card-body">
                             <h4 class="card-title text-center">Account Approval Pending</h4>
                             
-                            <div class="alert alert-success" role="alert">
-                                <?php echo htmlspecialchars($success_message); ?>
+                            <div class="alert alert-info" role="alert">
+                                <h5 class="alert-heading">Your account is pending approval</h5>
+                                <p>Your account has been created but is currently inactive. An administrator needs to approve your account before you can access the system.</p>
+                                <hr>
+                                <p class="mb-0">You will be able to login once your account has been activated.</p>
                             </div>
                             
-                            <div class="text-center">
-                                <p>Your account is currently in the queue for admin approval.</p>
-                                <p>You will receive an email notification once your account has been activated.</p>
-                                <p>Thank you for your patience.</p>
-                                
-                                <div class="mt-4">
-                                    <a href="login.php" class="btn btn-primary">Return to Login</a>
-                                </div>
+                            <div class="text-center mt-4">
+                                <a href="login.php" class="btn btn-primary">Return to Login</a>
                             </div>
                         </div>
                     </div>
